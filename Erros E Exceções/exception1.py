@@ -1,23 +1,24 @@
-'''def red_int( ):
-        integer=int(input('Digite: '))
-        return integer
+def read_int_and_float():
+        integer = None
+        while integer is None:
+         try:
+            integer_input = (input('Digite um inteiro: '))
+            integer = int(integer_input)
+         except ValueError:
+                print('Só é possível aceitar inteiros!')       
+         else:
+              print(f'Inteiro : {integer}')
 
-def red_float():
-      decimal=float(input('Digite um float: '))
-      return decimal'''
 
-
-class Errodetipo(Exception):
-    pass
-
-
-    try:    
-        integer = int(input('Digite um valor inteiro: '))
-        decimal = float(input('Digite um float: '))  
+        decimal = None
+        while decimal is None:
+         try:
+            decimal_input = (input('Digite um número float: '))
+            decimal = float(decimal_input)
+         except ValueError:
+                print(' Erro! Só é possível aceitar números decimais!')                     
+         else:
+           print(f'Decimal : {decimal}')
+              
       
-    except ValueError:
-        print('\033[0;31;40mSó é possivel ser escrito inteiro!')
-        
-    else:
-            print(f'Inteiro : {integer}')
-            print(f'Float:  {decimal}')
+read_int_and_float()
